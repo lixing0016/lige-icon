@@ -1,6 +1,6 @@
 {
   "name": "离歌图标包",
-  "description": "无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为260504",
+  "description": "无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为260505",
   "icons": [
     {
       "name": "lige",
@@ -3025,6 +3025,10 @@
     {
       "name": "rrgg_inc",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/06jichang\/rrgg_inc.png"
+    },
+    {
+      "name": "Runway",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/06jichang\/Runway.png"
     },
     {
       "name": "SakuraCat",
