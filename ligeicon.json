@@ -1,6 +1,6 @@
 {
   "name": "离歌图标包",
-  "description": "无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为260505",
+  "description": "无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为260506",
   "icons": [
     {
       "name": "lige",
@@ -1513,6 +1513,10 @@
     {
       "name": "exhentai",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/04ProxySoft\/exhentai.png"
+    },
+    {
+      "name": "f1",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/04ProxySoft\/f1.png"
     },
     {
       "name": "facebook(1)",
