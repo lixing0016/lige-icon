@@ -85,7 +85,7 @@ def generate_emby():
     now_beijing = datetime.utcnow() + timedelta(hours=8)
     version_date = now_beijing.strftime('%y%m%d')
     
-    description_text = f"无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为{version_date}"
+    description_text = f"图标更新请关注TG频道：@ligeicon ，您当前版本日期为{version_date}"
 
     # --- 4. 构建 JSON ---
     data = {
