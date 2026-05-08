@@ -20,7 +20,7 @@
 | 类型 | 适用范围 | 链接 |
 | --- | --- | --- |
 | 通用图标库（不包含Emby） | 建议 QuanX / Loon / Surge 等代理软件使用 | `https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json` |
-| Emby 专属图标库 | 建议 Fileball / Senplayer / Yamby / Hills 等播放器使用 | `https://raw.githubusercontent.com/lige47/lige_icon/refs/heads/main/lige-emby-icon.json` |
+| Emby 专属图标库 | 建议 Fileball / Senplayer / Yamby / Hills 等播放器使用 | `https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json` |
 
 ## 一键导入
 
