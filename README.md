@@ -38,3 +38,10 @@ https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/scripts/wangluoxin
 ```
 ## 补充说明
 转载请注明出处，谢谢！
+## Star History
+
+<p align="center">
+  <a href="https://www.star-history.com/#lige47/QuanX-icon-rule&Date">
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=lige47/QuanX-icon-rule&type=Date" />
+  </a>
+</p>
