@@ -1,6 +1,6 @@
 {
   "name": "离歌图标包",
-  "description": "无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为260506",
+  "description": "无偿求更，图标更新请关注TG频道：@ligeicon ，您当前版本日期为260508",
   "icons": [
     {
       "name": "lige",
@@ -1417,6 +1417,10 @@
     {
       "name": "claude",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/04ProxySoft\/claude.png"
+    },
+    {
+      "name": "cloudflare",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/04ProxySoft\/cloudflare.png"
     },
     {
       "name": "Copilot(1)",
