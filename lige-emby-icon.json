@@ -515,6 +515,10 @@
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/gousheng-emby.png"
     },
     {
+      "name": "guai(1)-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/guai(1)-emby.png"
+    },
+    {
       "name": "guai-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/guai-emby.png"
     },
@@ -1327,8 +1331,16 @@
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/StarCat-emby.png"
     },
     {
+      "name": "StarharnMedia-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/StarharnMedia-emby.png"
+    },
+    {
       "name": "STARK-BASE-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/STARK-BASE-emby.png"
+    },
+    {
+      "name": "StarshoMedia(1)-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/StarshoMedia(1)-emby.png"
     },
     {
       "name": "StarshoMedia-emby",
@@ -1569,6 +1581,10 @@
     {
       "name": "yutu-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/yutu-emby.png"
+    },
+    {
+      "name": "YXIO-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/YXIO-emby.png"
     },
     {
       "name": "yztcloud(1)",
