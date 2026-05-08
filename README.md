@@ -19,27 +19,27 @@
 
 | 类型 | 适用范围 | 链接 |
 | --- | --- | --- |
-| 通用图标库（不包含Emby） | 建议 QuanX / Loon / Surge 等代理软件使用 | `https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json` |
-| Emby 专属图标库 | 建议 Fileball / Senplayer / Yamby / Hills 等播放器使用 | `https://raw.githubusercontent.com/lige47/QuanX-icon-rule/refs/heads/main/lige-emby-icon.json` |
+| 通用图标库（不包含Emby） | 建议 QuanX / Loon / Surge 等代理软件使用 | `https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json` |
+| Emby 专属图标库 | 建议 Fileball / Senplayer / Yamby / Hills 等播放器使用 | `https://raw.githubusercontent.com/lige47/lige_icon/refs/heads/main/lige-emby-icon.json` |
 
 ## 一键导入
 
 | 工具 | 导入入口 |
 | --- | --- |
-| Quantumult X | [一键导入通用图标库](https://quantumult.app/x/open-app/ui?module=gallery&type=icon&action=add&content=%5B%22https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json%22%5D) |
-| Loon | [一键导入通用图标库](https://www.nsloon.com/openloon/import?iconset=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json) |
+| Quantumult X | [一键导入通用图标库](https://quantumult.app/x/open-app/ui?module=gallery&type=icon&action=add&content=%5B%22https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json%22%5D) |
+| Loon | [一键导入通用图标库](https://www.nsloon.com/openloon/import?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json) |
 | Senplayer | [一键导入 Emby 图标库](https://lige47.github.io/lige_icon/scripts/import.html?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json) |
 
 ## 使用教程
 
-[查看图标库使用教程](https://github.com/lige47/QuanX-icon-rule/blob/main/jiaochen/README.md)
+[查看图标库使用教程](https://github.com/lige47/lige_icon/blob/main/jiaochen/README.md)
 
 ## 分流规则
 
 | 规则 | 链接 |
 | --- | --- |
-| 各大 AI 模型 | `https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/rule/openai.list` |
-| Emby | `https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/rule/embytest.list` |
+| 各大 AI 模型 | `https://raw.githubusercontent.com/lige47/lige_icon/main/rule/openai.list` |
+| Emby | `https://raw.githubusercontent.com/lige47/lige_icon/main/rule/embytest.list` |
 
 ## Loon 网络检测
 
@@ -48,7 +48,7 @@
 完整版请查看：[https://t.me/zhetengsha](https://t.me/zhetengsha)
 
 ```ruby
-https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/scripts/wangluoxinxi.plugin
+https://raw.githubusercontent.com/lige47/lige_icon/main/scripts/wangluoxinxi.plugin
 ```
 ## 补充说明
 转载请注明出处，谢谢！
@@ -56,6 +56,6 @@ https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/scripts/wangluoxin
 
 <p align="center">
   <a href="https://www.star-history.com/#lige47/QuanX-icon-rule&Date">
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=lige47/QuanX-icon-rule&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=lige47/lige_icon&type=Date" />
   </a>
 </p>
