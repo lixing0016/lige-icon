@@ -1,0 +1,17 @@
+#!name=Loon Icon Pack Daily Updater
+#!desc=Every 24 hours, checks the icon pack URL and opens Loon's subscription resource update action from a notification. Loon's script API does not expose a silent resource-update call, so the notification tap is required.
+#!author=Codex
+#!homepage=https://nsloon.app/docs/Plugin/
+#!icon=arrow.clockwise.icloud.system
+#!system=iOS,iPadOS
+#!loon_version=3.2.1(733)
+#!tag=Icon,Automation
+
+[Argument]
+cron = input,"0 8 * * *",tag=Run time,desc=Cron expression. Default: every day at 08:00.
+iconset = input,"",tag=Icon pack URL,desc=Optional remote iconset URL. Used for change checks and for import-iconset mode.
+action = select,"update-all","import-iconset",tag=Tap action,desc=update-all opens Loon's update-all-subscriptions action. import-iconset opens the iconset import link.
+notifyAlways = switch,true,tag=Always notify,desc=If disabled, notify only when the icon pack changed or the check failed.
+
+[Script]
+cron "{cron}" script-path=loon-iconpack-auto-update.js,tag=Icon Pack Daily Updater,timeout=30,argument=[{iconset},{action},{notifyAlways}]
