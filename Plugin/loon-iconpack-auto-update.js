@@ -76,6 +76,15 @@ function postUpdateNotification(subtitle, content, openUrl) {
   $notification.post("Loon 图标包更新", subtitle, content, { openUrl });
 }
 
+function notifyIconsets(subtitle, content, urls) {
+  urls.forEach((url, index) => {
+    const itemSubtitle = urls.length > 1 ? subtitle + " " + (index + 1) + "/" + urls.length : subtitle;
+    $notification.post("Loon 图标包更新", itemSubtitle, content, {
+      openUrl: "loon://import?iconset=" + encodeURIComponent(url),
+    });
+  });
+}
+
 function finish(meta, shouldNotify, subtitle, content, openUrl) {
   $persistentStore.write(JSON.stringify(meta), STORE_KEY);
   if (shouldNotify) postUpdateNotification(subtitle, content, openUrl);
@@ -85,7 +94,7 @@ function finish(meta, shouldNotify, subtitle, content, openUrl) {
 const args = normalizeArgs(typeof $argument === "undefined" ? "" : $argument);
 const iconsetUrl = String(args.iconset || "").trim();
 const iconsetUrls = parseIconsetUrls(iconsetUrl);
-const action = String(args.action || "update-all").trim();
+const action = String(args.action || "import-iconset").trim();
 const notifyAlways = truthy(args.notifyAlways, true);
 const now = new Date().toISOString();
 
@@ -126,14 +135,23 @@ if (!iconsetUrls.length) {
       const content = firstRun
         ? prefix + "首次检测完成。点击通知后更新 Loon 资源。"
         : changed
-          ? prefix + "远程图标包信息发生变化。点击通知后更新 Loon 资源。"
-          : prefix + "点击通知后，Loon 会执行更新全部订阅资源。";
+          ? prefix + "远程图标包信息发生变化。点击通知后导入/刷新图标包。"
+          : prefix + "点击通知后，Loon 会导入/刷新图标包。";
+
+      const meta = mergeMeta(baseMeta, {
+        fingerprint,
+        results,
+      });
+
+      if (shouldNotify && action === "import-iconset") {
+        $persistentStore.write(JSON.stringify(meta), STORE_KEY);
+        notifyIconsets(subtitle, content, iconsetUrls);
+        $done();
+        return;
+      }
 
       finish(
-        mergeMeta(baseMeta, {
-          fingerprint,
-          results,
-        }),
+        meta,
         shouldNotify,
         subtitle,
         content,
