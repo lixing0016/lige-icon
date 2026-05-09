@@ -43,6 +43,14 @@ function truthy(value, fallback) {
   return !/^(false|0|no|off)$/i.test(String(value).trim());
 }
 
+function parseIconsetUrls(value) {
+  if (!value) return [];
+  return String(value)
+    .split(/[\n\r,;|]+/)
+    .map((url) => url.trim())
+    .filter(Boolean);
+}
+
 function getHeader(headers, name) {
   if (!headers) return "";
   const target = name.toLowerCase();
@@ -76,22 +84,23 @@ function finish(meta, shouldNotify, subtitle, content, openUrl) {
 
 const args = normalizeArgs(typeof $argument === "undefined" ? "" : $argument);
 const iconsetUrl = String(args.iconset || "").trim();
+const iconsetUrls = parseIconsetUrls(iconsetUrl);
 const action = String(args.action || "update-all").trim();
 const notifyAlways = truthy(args.notifyAlways, true);
 const now = new Date().toISOString();
 
 const openUrl =
-  action === "import-iconset" && iconsetUrl
-    ? "loon://import?iconset=" + encodeURIComponent(iconsetUrl)
+  action === "import-iconset" && iconsetUrls.length === 1
+    ? "loon://import?iconset=" + encodeURIComponent(iconsetUrls[0])
     : "loon://update?sub=all";
 
 const baseMeta = {
   lastRun: now,
   action,
-  iconsetUrl,
+  iconsetUrls,
 };
 
-if (!iconsetUrl) {
+if (!iconsetUrls.length) {
   finish(
     mergeMeta(baseMeta, { fingerprint: "" }),
     true,
@@ -100,51 +109,67 @@ if (!iconsetUrl) {
     openUrl
   );
 } else {
-  $httpClient.head({ url: iconsetUrl, timeout: 10000, "auto-redirect": true }, (error, response) => {
-    const last = readLast();
+  const results = [];
 
-    if (error || !response) {
+  function checkNext(index) {
+    if (index >= iconsetUrls.length) {
+      const last = readLast();
+      const fingerprint = results
+        .map((item) => [item.url, item.status, item.etag, item.lastModified, item.contentLength, item.error].join("|"))
+        .join("\n");
+      const changed = Boolean(last.fingerprint && last.fingerprint !== fingerprint);
+      const firstRun = !last.fingerprint;
+      const hasError = results.some((item) => item.error || item.status >= 400);
+      const shouldNotify = notifyAlways || changed || hasError;
+      const subtitle = hasError ? "图标包检测异常" : changed ? "图标包有变化" : "定时提醒";
+      const prefix = iconsetUrls.length > 1 ? iconsetUrls.length + " 个图标包：" : "";
+      const content = firstRun
+        ? prefix + "首次检测完成。点击通知后更新 Loon 资源。"
+        : changed
+          ? prefix + "远程图标包信息发生变化。点击通知后更新 Loon 资源。"
+          : prefix + "点击通知后，Loon 会执行更新全部订阅资源。";
+
       finish(
-        mergeMeta(baseMeta, { fingerprint: last.fingerprint || "", lastError: String(error || "No response") }),
-        true,
-        "图标包检测失败",
-        "点击通知后，仍可打开 Loon 的资源更新动作。",
+        mergeMeta(baseMeta, {
+          fingerprint,
+          results,
+        }),
+        shouldNotify,
+        subtitle,
+        content,
         openUrl
       );
       return;
     }
 
-    const status = response.status || 0;
-    const headers = response.headers || {};
-    const fingerprint = [
-      status,
-      getHeader(headers, "etag"),
-      getHeader(headers, "last-modified"),
-      getHeader(headers, "content-length"),
-    ].join("|");
+    const url = iconsetUrls[index];
+    $httpClient.head({ url, timeout: 10000, "auto-redirect": true }, (error, response) => {
+      if (error || !response) {
+        results.push({
+          url,
+          status: 0,
+          etag: "",
+          lastModified: "",
+          contentLength: "",
+          error: String(error || "No response"),
+        });
+        checkNext(index + 1);
+        return;
+      }
 
-    const changed = Boolean(last.fingerprint && last.fingerprint !== fingerprint);
-    const firstRun = !last.fingerprint;
-    const shouldNotify = notifyAlways || changed || status >= 400;
-    const subtitle = status >= 400 ? "HTTP " + status : changed ? "图标包有变化" : "定时提醒";
-    const content = firstRun
-      ? "首次检测完成。点击通知后更新 Loon 资源。"
-      : changed
-        ? "远程图标包信息发生变化。点击通知后更新 Loon 资源。"
-        : "点击通知后，Loon 会执行更新全部订阅资源。";
-
-    finish(
-      mergeMeta(baseMeta, {
+      const status = response.status || 0;
+      const headers = response.headers || {};
+      results.push({
+        url,
         status,
-        fingerprint,
         etag: getHeader(headers, "etag"),
         lastModified: getHeader(headers, "last-modified"),
         contentLength: getHeader(headers, "content-length"),
-      }),
-      shouldNotify,
-      subtitle,
-      content,
-      openUrl
-    );
-  });
+        error: "",
+      });
+      checkNext(index + 1);
+    });
+  }
+
+  checkNext(0);
 }
