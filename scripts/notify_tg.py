@@ -33,22 +33,22 @@ def run():
 图标排序为：国旗  代理软件logo  国内可直连软件图标  外网软件图标  无分类的图标 机场logo
 
 <b>复制以下图标库链接导入即可( 此图标库不包含Emby服图标，Emby图标请导入下面的那个)</b>
-https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json
+https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json
 
-<a href="https://quantumult.app/x/open-app/ui?module=gallery&type=icon&action=add&content=%5B%22https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json%22%5D">QuantumultX一键导入</a>
-<a href="https://www.nsloon.com/openloon/import?iconset=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json">Loon一键导入</a>
+<a href="https://quantumult.app/x/open-app/ui?module=gallery&type=icon&action=add&content=%5B%22https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json%22%5D">QuantumultX一键导入</a>
+<a href="https://www.nsloon.com/openloon/import?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json">Loon一键导入</a>
 
 <b>Emby图标库（只有Emby图标，建议 Senplayer Fileball Yamby Hills Forward 小幻影视等软件使用）</b>
-https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/lige-emby-icon.json
+https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json
 
-<a href="https://lige47.github.io/QuanX-icon-rule/scripts/import.html?iconset=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/lige-emby-icon.json">Senplayer一键导入</a>
+<a href="https://lige47.github.io/lige_icon/scripts/import.html?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json">Senplayer一键导入</a>
 
 本频道链接：https://t.me/ligeicon    群组：https://t.me/ligeicon_group
 需要适配图标群内反馈即可。无偿适配！！！
 
 一些小的新增可能不会发频道，可以关注这个最近一次更新时间，来判断自己是不是最新的库。
 Github地址：
-https://github.com/lige47/QuanX-icon-rule
+https://github.com/lige47/lige_icon
 <b>最近一次更新时间为：{time_cn}  目前图标数为{count}个！</b>
 
 自营正规流量卡：
