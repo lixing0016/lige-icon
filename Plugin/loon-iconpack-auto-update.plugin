@@ -13,5 +13,5 @@ iconset = input,"",tag=图标包链接,desc=可选。可填一个或多个远程
 action = select,"update-all","import-iconset",tag=点击通知后的动作,desc=update-all 更新所有订阅资源；import-iconset 打开图标包导入链接。
 notifyAlways = switch,true,tag=每次都通知,desc=关闭后，仅在图标包变化或检测失败时通知。
 
-[Script]
-cron "{cron}" script-path=https://github.com/lige47/lige_icon/raw/refs/heads/main/Plugin/loon-iconpack-auto-update.js,tag=图标包每日更新提醒,timeout=30,argument=iconset={iconset}&action={action}&notifyAlways={notifyAlways}
+[script]
+cron {cron} script-path=https://raw.githubusercontent.com/lige47/lige_icon/refs/heads/main/Plugin/loon-iconpack-auto-update.js,tag=图标包每日更新提醒,timeout=30,argument=[{iconset},{action},{notifyAlways}]
