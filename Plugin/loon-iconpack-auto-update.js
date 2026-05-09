@@ -15,6 +15,16 @@ function normalizeArgs(input) {
   if (input && typeof input === "object") return input;
   if (!input || typeof input !== "string") return {};
 
+  const trimmed = input.trim();
+  if (trimmed.charAt(0) === "[" && trimmed.charAt(trimmed.length - 1) === "]") {
+    const values = trimmed.slice(1, -1).split(",");
+    return {
+      iconset: values[0] || "",
+      action: values[1] || "",
+      notifyAlways: values[2] || "",
+    };
+  }
+
   const args = {};
   input.split("&").forEach((part) => {
     const index = part.indexOf("=");
@@ -55,7 +65,7 @@ function readLast() {
 }
 
 function postUpdateNotification(subtitle, content, openUrl) {
-  $notification.post("Loon icon pack update", subtitle, content, { openUrl });
+  $notification.post("Loon 图标包更新", subtitle, content, { openUrl });
 }
 
 function finish(meta, shouldNotify, subtitle, content, openUrl) {
@@ -85,8 +95,8 @@ if (!iconsetUrl) {
   finish(
     mergeMeta(baseMeta, { fingerprint: "" }),
     true,
-    "Scheduled reminder",
-    "Tap to run Loon's update-all-subscription-resources action.",
+    "定时提醒",
+    "点击通知后，Loon 会执行更新全部订阅资源。",
     openUrl
   );
 } else {
@@ -97,8 +107,8 @@ if (!iconsetUrl) {
       finish(
         mergeMeta(baseMeta, { fingerprint: last.fingerprint || "", lastError: String(error || "No response") }),
         true,
-        "Icon pack check failed",
-        "Tap to open Loon's update action anyway.",
+        "图标包检测失败",
+        "点击通知后，仍可打开 Loon 的资源更新动作。",
         openUrl
       );
       return;
@@ -116,12 +126,12 @@ if (!iconsetUrl) {
     const changed = Boolean(last.fingerprint && last.fingerprint !== fingerprint);
     const firstRun = !last.fingerprint;
     const shouldNotify = notifyAlways || changed || status >= 400;
-    const subtitle = status >= 400 ? "HTTP " + status : changed ? "Icon pack changed" : "Scheduled reminder";
+    const subtitle = status >= 400 ? "HTTP " + status : changed ? "图标包有变化" : "定时提醒";
     const content = firstRun
-      ? "First check completed. Tap to update Loon resources."
+      ? "首次检测完成。点击通知后更新 Loon 资源。"
       : changed
-        ? "Remote icon pack metadata changed. Tap to update Loon resources."
-        : "Tap to run Loon's update-all-subscription-resources action.";
+        ? "远程图标包信息发生变化。点击通知后更新 Loon 资源。"
+        : "点击通知后，Loon 会执行更新全部订阅资源。";
 
     finish(
       mergeMeta(baseMeta, {
