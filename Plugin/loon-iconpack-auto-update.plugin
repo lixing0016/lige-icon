@@ -1,17 +1,17 @@
-#!name=Loon Icon Pack Daily Updater
-#!desc=Every 24 hours, checks the icon pack URL and opens Loon's subscription resource update action from a notification. Loon's script API does not expose a silent resource-update call, so the notification tap is required.
+#!name=Loon 图标包每日更新提醒
+#!desc=每 24 小时检查一次图标包地址，并通过通知打开 Loon 的订阅资源更新动作。由于 Loon 脚本 API 没有静默更新资源的接口，所以需要点击通知触发更新。
 #!author=Codex
 #!homepage=https://nsloon.app/docs/Plugin/
 #!icon=arrow.clockwise.icloud.system
 #!system=iOS,iPadOS
 #!loon_version=3.2.1(733)
-#!tag=Icon,Automation
+#!tag=图标,自动化
 
 [Argument]
-cron = input,"0 8 * * *",tag=Run time,desc=Cron expression. Default: every day at 08:00.
-iconset = input,"",tag=Icon pack URL,desc=Optional remote iconset URL. Used for change checks and for import-iconset mode.
-action = select,"update-all","import-iconset",tag=Tap action,desc=update-all opens Loon's update-all-subscriptions action. import-iconset opens the iconset import link.
-notifyAlways = switch,true,tag=Always notify,desc=If disabled, notify only when the icon pack changed or the check failed.
+cron = input,"0 8 * * *",tag=执行时间,desc=Cron 表达式。默认每天 08:00 执行一次。
+iconset = input,"",tag=图标包链接,desc=可选。填入远程图标包链接后，脚本会检测 ETag、Last-Modified 或文件大小是否变化。
+action = select,"update-all","import-iconset",tag=点击通知后的动作,desc=update-all 更新所有订阅资源；import-iconset 打开图标包导入链接。
+notifyAlways = switch,true,tag=每次都通知,desc=关闭后，仅在图标包变化或检测失败时通知。
 
 [Script]
-cron "{cron}" script-path=https://github.com/lige47/lige_icon/raw/refs/heads/main/Plugin/loon-iconpack-auto-update.js,tag=Icon Pack Daily Updater,timeout=30,argument=[{iconset},{action},{notifyAlways}]
+cron "{cron}" script-path=loon-iconpack-auto-update.js,tag=图标包每日更新提醒,timeout=30,argument=iconset={iconset}&action={action}&notifyAlways={notifyAlways}
