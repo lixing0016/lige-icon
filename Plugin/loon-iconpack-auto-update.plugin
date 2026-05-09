@@ -14,4 +14,4 @@ action = select,"update-all","import-iconset",tag=Tap action,desc=update-all ope
 notifyAlways = switch,true,tag=Always notify,desc=If disabled, notify only when the icon pack changed or the check failed.
 
 [Script]
-cron "{cron}" script-path=loon-iconpack-auto-update.js,tag=Icon Pack Daily Updater,timeout=30,argument=[{iconset},{action},{notifyAlways}]
+cron "{cron}" script-path=https://github.com/lige47/lige_icon/raw/refs/heads/main/Plugin/loon-iconpack-auto-update.js,tag=Icon Pack Daily Updater,timeout=30,argument=[{iconset},{action},{notifyAlways}]
