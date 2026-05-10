@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在导入 小幻影视 图标包...</title>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const iconUrl = params.get('url');
+            
+            if (iconUrl) {
+                // 自动对传入的直链进行 URL 编码
+                const encodedUrl = encodeURIComponent(iconUrl);
+                const protocol = "rodelplayer://import-icon?url=" + encodedUrl;
+                
+                // 尝试唤醒 App
+                window.location.href = protocol;
+                
+                // 3秒后未跳转则显示手动按钮
+                setTimeout(() => {
+                    document.getElementById('manual').style.display = 'block';
+                    document.getElementById('btn').href = protocol;
+                }, 3000);
+            } else {
+                document.body.innerHTML = "<h3>未检测到图标源地址</h3>";
+            }
+        };
+    </script>
+    <style>
+        body { font-family: -apple-system, sans-serif; text-align: center; padding-top: 50px; background-color: #f4f4f9; }
+        .btn { display: inline-block; padding: 12px 24px; background: #34c759; color: #fff; text-decoration: none; border-radius: 10px; margin-top: 20px; font-weight: bold; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+    <h3>正在跳转 RodelPlayer...</h3>
+    <p>请在弹窗中点击“打开”以完成导入</p>
+    
+    <div id="manual" style="display:none;">
+        <p>如果长时间没反应，请点击下方按钮：</p>
+        <a id="btn" class="btn" href="#">手动一键导入</a>
+    </div>
+</body>
+</html>
