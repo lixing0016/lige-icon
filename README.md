@@ -29,6 +29,7 @@
 | Quantumult X | [一键导入通用图标库](https://quantumult.app/x/open-app/ui?module=gallery&type=icon&action=add&content=%5B%22https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json%22%5D) |
 | Loon | [一键导入通用图标库](https://www.nsloon.com/openloon/import?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json) |
 | Senplayer | [一键导入 Emby 图标库](https://lige47.github.io/lige_icon/scripts/import.html?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json) |
+| 小幻影视 | [一键导入 Emby 图标库](https://lige47.github.io/lige_icon/scripts/rodel_import.html?url=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json) |
 
 ## 使用教程
 
