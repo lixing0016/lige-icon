@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json
 <b>Emby图标库（只有Emby图标，建议 Senplayer Fileball Yamby Hills Forward 小幻影视等软件使用）</b>
 https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json
 
-<a href="https://lige47.github.io/lige_icon/scripts/import.html?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json">Senplayer一键导入</a>
+<a href="https://lige47.github.io/lige_icon/scripts/senplayer_import.html?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json">Senplayer一键导入</a>
 
 本频道链接：https://t.me/ligeicon    群组：https://t.me/ligeicon_group
 需要适配图标群内反馈即可。无偿适配！！！
