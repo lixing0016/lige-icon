@@ -42,6 +42,8 @@ https://raw.githubusercontent.com/lige47/lige_icon/main/ligeicon.json
 https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json
 
 <a href="https://lige47.github.io/lige_icon/scripts/senplayer_import.html?iconset=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json">Senplayer一键导入</a>
+<a href="https://lige47.github.io/lige_icon/scripts/rodel_import.html?url=https://raw.githubusercontent.com/lige47/lige_icon/main/lige-emby-icon.json">小幻影视一键导入</a>
+
 
 本频道链接：https://t.me/ligeicon    群组：https://t.me/ligeicon_group
 需要适配图标群内反馈即可。无偿适配！！！
