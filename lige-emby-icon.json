@@ -1,6 +1,6 @@
 {
   "name": "离歌Emby专用",
-  "description": "图标更新请关注TG频道：@ligeicon ，您当前版本日期为260510",
+  "description": "图标更新请关注TG频道：@ligeicon ，您当前版本日期为260511",
   "icons": [
     {
       "name": "emby",
@@ -195,6 +195,10 @@
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/ash-emby.png"
     },
     {
+      "name": "Ask(1)-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/Ask(1)-emby.png"
+    },
+    {
       "name": "Ask-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/Ask-emby.png"
     },
@@ -281,6 +285,10 @@
     {
       "name": "chuidaniu-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/chuidaniu-emby.png"
+    },
+    {
+      "name": "ChuiYans-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/ChuiYans-emby.png"
     },
     {
       "name": "Ciji-emby",
@@ -1015,6 +1023,10 @@
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/Ok-emby.png"
     },
     {
+      "name": "OMEGA(1)-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/OMEGA(1)-emby.png"
+    },
+    {
       "name": "OMEGA-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/OMEGA-emby.png"
     },
@@ -1323,6 +1335,10 @@
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/smlw-emby.png"
     },
     {
+      "name": "SpaceK-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/SpaceK-emby.png"
+    },
+    {
       "name": "star-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/star-emby.png"
     },
@@ -1389,6 +1405,10 @@
     {
       "name": "tdck_qidian_emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/tdck_qidian_emby.png"
+    },
+    {
+      "name": "temby-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/temby-emby.png"
     },
     {
       "name": "Terminus-emby",
@@ -1581,6 +1601,10 @@
     {
       "name": "Yukihasu-emby",
       "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/Yukihasu-emby.png"
+    },
+    {
+      "name": "yunmu-emby",
+      "url": "https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/emby\/yunmu-emby.png"
     },
     {
       "name": "yutu-emby",
